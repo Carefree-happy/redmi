@@ -7,6 +7,14 @@ module.exports = {
         filename: "bundle.js", 
         // path: path.join(__dirname, "development"),
         // path: path.join(__dirname, "production"),
-        path: path.join(__dirname, "none"),
+        path: path.join(__dirname, "dist"),
     },
+    module: { 
+        rules: [ // 转换规则
+            {
+                test: /\.css$/, //匹配所有的 css 文件
+                use: 'css-loader' // use: 对应的 Loader 名称
+            }
+        ]
+    }
 };
