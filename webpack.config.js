@@ -7,6 +7,12 @@ console.log('process.env.NODE_ENV=', process.env.NODE_ENV) // 打印环境变量
 const config = {
     mode: "development", 
     entry: "./src/index.js", 
+    devServer: {
+        static: path.resolve(__dirname, 'public'),
+        compress: true,
+        port: 9000,
+        open: true,
+    },
     output: {
         filename: "bundle.js", 
         // path: path.join(__dirname, "development"),
